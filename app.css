@@ -1,7 +1,43 @@
-#flag {
-    background-color: #ebeef1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 5rem;
-    column-gap: 2rem;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+:root {
+  /* Colors */
+  --dm-element: hsl(209, 23%, 22%);
+  --dm-bg: hsl(207, 26%, 17%);
+  --lm-text: hsl(200, 15%, 8%);
+  --lm-input: hsl(0, 0%, 52%);
+  --lm-bg: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography  */
+  font-size: 14px;
+}
+
+body {
+  background-color: var(--lm-bg);
+}
+
+#main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 5rem;
+  column-gap: 2rem;
+}
+
+.country {
+  background: #fff;
+  width: 20rem;
+}
+
+.flag {
+  width: 20rem;
+  height: 12rem;
+  object-fit: cover;
 }
