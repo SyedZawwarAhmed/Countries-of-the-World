@@ -1,0 +1,24 @@
+header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.header {
+  padding: 2em 5em;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 102rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moon {
+    width: var(--icon-w);
+}

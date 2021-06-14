@@ -1,0 +1,45 @@
+#main {
+    margin: 0 auto;
+    padding: 2em 5em;
+    width: 100%;
+    max-width: 102rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .country {
+    background: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flag-container {
+    height: 12rem;
+  }
+  
+  .flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .country-details {
+    padding: 2em 1.3em 3em;
+  }
+  
+  .country-name {
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+  }
+  
+  span {
+    font-weight: 300;
+  }
+  
+  strong {
+    font-weight: 600;
+  }
