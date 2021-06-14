@@ -1,6 +1,7 @@
 header {
   width: 100%;
   background-color: #fff;
+  box-shadow: var(--box-shadow);
 }
 
 .header {
@@ -13,10 +14,20 @@ header {
   align-items: center;
 }
 
+.title {
+    font-size: 2rem;
+}
+
 .theme {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5em;
+}
+
+.theme span {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .moon {
