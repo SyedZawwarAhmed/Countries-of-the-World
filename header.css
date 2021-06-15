@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  background-color: #fff;
+  background-color: var(--bg);
   box-shadow: var(--box-shadow);
 }
 
@@ -15,7 +15,7 @@ header {
 }
 
 .title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .theme {
@@ -23,13 +23,19 @@ header {
   justify-content: center;
   align-items: center;
   gap: 0.5em;
+  cursor: pointer;
+}
+
+.theme:hover {
+  background-color: var(--lm-input);
 }
 
 .theme span {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
+  pointer-events: none;
 }
 
 .moon {
-    width: var(--icon-w);
+  width: var(--icon-w);
 }

@@ -14,9 +14,10 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--bg);
   gap: 0.5em;
   box-shadow: var(--box-shadow);
+  border-radius: var(--br);
 }
 
 .search-icon {
@@ -24,7 +25,31 @@
 }
 
 .search {
+  width: 100%;
   border: none;
   outline: none;
   font-size: 1.3rem;
+}
+
+.filter {
+  width: 20rem;
+  padding: 1.2rem;
+  background-color: var(--bg);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--br);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter span {
+  font-size: 1.3rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.triangle {
+  border-top: 0.5rem solid var(--lm-text);
+  border-right: 0.5rem solid transparent;
+  border-left: 0.5rem solid transparent;
 }

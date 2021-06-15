@@ -20,7 +20,7 @@
     <header>
       <div class="header">
         <h3 class="title">Where in the world?</h3>
-        <div class="theme">
+        <div id="theme" class="theme">
             <img class="moon" src="icons/moon-regular.svg" alt="">
           <span>Dark Mode</span>
         </div>
@@ -31,13 +31,7 @@
         <img class="search-icon" src="icons/search-solid.svg" alt="">
         <input class="search" type="text" placeholder="Search for a country..." />
       </div>
-      <select name="Filter by Region" id="filter">
-        <option value="Africa">Africa</option>
-        <option value="America">America</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>
+      <div class="filter"><span>Filter By Region</span><div class="triangle"></div></div>
     </div>
     <div id="main"></div>
   </body>
