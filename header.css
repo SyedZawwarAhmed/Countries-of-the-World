@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  background-color: var(--bg);
+  background-color: var(--lbg);
   box-shadow: var(--box-shadow);
 }
 

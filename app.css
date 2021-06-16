@@ -11,9 +11,9 @@
   /* Colors */
   --dm-element: #2b3945;
   --dm-bg: #202c37;
-  --lm-text: #111517;
-  --lm-input: #858585;
-  --lm-bg: #fafafa;
+  --text: #111517;
+  --input: #858585;
+  --lbg: #fafafa;
   --bg: #ffffff;
 
   /* Typography  */
@@ -27,9 +27,10 @@
 }
 
 body {
-  background-color: var(--lm-bg);
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--text);
 }

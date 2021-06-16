@@ -9,12 +9,12 @@
 }
 
 .search-bar {
-  width: 30rem;
+  width: 35rem;
   padding: 1.2em;
   display: flex;
   justify-content: left;
   align-items: center;
-  background-color: var(--bg);
+  background-color: var(--lbg);
   gap: 0.5em;
   box-shadow: var(--box-shadow);
   border-radius: var(--br);
@@ -29,12 +29,14 @@
   border: none;
   outline: none;
   font-size: 1.3rem;
+  color: var(--text);
+  background-color: var(--lbg);
 }
 
 .filter {
   width: 20rem;
   padding: 1.2rem;
-  background-color: var(--bg);
+  background-color: var(--lbg);
   box-shadow: var(--box-shadow);
   border-radius: var(--br);
   display: flex;
@@ -49,7 +51,7 @@
 }
 
 .triangle {
-  border-top: 0.5rem solid var(--lm-text);
+  border-top: 0.5rem solid var(--text);
   border-right: 0.5rem solid transparent;
   border-left: 0.5rem solid transparent;
 }
