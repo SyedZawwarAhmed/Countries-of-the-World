@@ -18,11 +18,9 @@
 
   /* Typography  */
   font-size: 14px;
-
+  
   --icon-w: 1.5rem;
-
   --box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
-
   --br: 0.5rem;
 }
 

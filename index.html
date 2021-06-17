@@ -10,12 +10,6 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="menu.css" />
@@ -26,15 +20,16 @@
       <div class="header">
         <h3 class="title">Where in the world?</h3>
         <div id="theme" class="theme">
-          <img class="moon" src="icons/moon-regular.svg" alt="" />
+          <img id="moon" class="moon" src="icons/moon-regular.svg" alt="" />
           <span>Dark Mode</span>
         </div>
       </div>
     </header>
     <div class="menu">
       <div id="search-bar" class="search-bar">
-        <img class="search-icon" src="icons/search-solid.svg" alt="" />
+        <img id="search-icon" class="search-icon" src="icons/search-solid.svg" alt="" />
         <input
+          id="search"
           class="search"
           type="text"
           placeholder="Search for a country..."
