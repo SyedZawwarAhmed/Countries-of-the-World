@@ -6,6 +6,7 @@ const root = document.querySelector(":root"),
   moon = document.getElementById("moon"),
   searchIcon = document.getElementById("search-icon"),
   search = document.getElementById("search"),
+  filter = document.getElementById("filter"),
   countryContainer = document.getElementsByClassName("country");
 
 let countries = [];
@@ -13,24 +14,18 @@ let countries = [];
 fetch("https://restcountries.eu/rest/v2/all")
   .then((res) => res.json())
   .then((data) => {
-    // countries = data;
-    search.addEventListener("input", () => {
-      // countries.forEach((country, j) => {
-      //   if (country.name.toLowerCase().includes(search.value.toLowerCase()) === false) {
-      //     countryContainer[j].style.display = "none";
-      //   } else {
-      //     countryContainer[j].style.display= "unset";
-      //   }
-      // });
-
-      countries = data.filter(country => {
-        if (country.name.toLowerCase().includes(search.value.toLowerCase())) {
-          return country;
-        }
-      })
-    });
+    countries = data;
     countries.forEach((country) => {
       main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+    });
+    search.addEventListener("input", () => {
+      countries.forEach((country, j) => {
+        if (!country.name.toLowerCase().includes(search.value.toLowerCase())) {
+          countryContainer[j].style.display = "none";
+        } else {
+          countryContainer[j].style.display = "unset";
+        }
+      });
     });
   });
 
@@ -66,3 +61,29 @@ function changeTheme() {
 }
 
 changeTheme();
+
+document.addEventListener(
+  "mousedown",
+  (e) => {
+    if (e.detail > 1) {
+      e.preventDefault();
+    }
+  },
+  false
+);
+
+theme.addEventListener(
+  "mousedown",
+  (e) => {
+    e.preventDefault();
+  },
+  false
+);
+
+filter.addEventListener(
+  "mousedown",
+  (e) => {
+    e.preventDefault();
+  },
+  false
+);

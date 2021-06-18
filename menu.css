@@ -33,7 +33,7 @@
   background-color: var(--lbg);
 }
 
-.filter {
+.selector {
   width: 20rem;
   padding: 1.2rem;
   background-color: var(--lbg);
@@ -42,9 +42,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
-.filter span {
+.selector span {
   font-size: 1.3rem;
   font-weight: 600;
   pointer-events: none;
