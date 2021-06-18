@@ -7,7 +7,9 @@ const root = document.querySelector(":root"),
   searchIcon = document.getElementById("search-icon"),
   search = document.getElementById("search"),
   filter = document.getElementById("filter"),
-  countryContainer = document.getElementsByClassName("country");
+  countryContainer = document.getElementsByClassName("country"),
+  options = document.querySelector(".options"),
+  regions = document.getElementsByClassName("region");
 
 let countries = [];
 
@@ -27,18 +29,35 @@ fetch("https://restcountries.eu/rest/v2/all")
         }
       });
     });
+    for (let i = 0; i < regions.length; i++) {
+      const reg = regions[i];
+      reg.addEventListener("click", () => {
+        countries.forEach((country, j) => {
+          if (reg.getAttribute("data-value").toLowerCase() === "all") {
+            countries.forEach((country, j) => {
+              countryContainer[j].style.display = "unset";
+            });
+          }
+          else if (
+            country.region.toLowerCase() !==
+            reg.getAttribute("data-value").toLowerCase()
+          ) {
+            countryContainer[j].style.display = "none";
+          } else {
+            countryContainer[j].style.display = "unset";
+          }
+        });
+      });
+    }
   });
 
 let mode = localStorage.getItem("mode");
 
-let darkModeEnabled = false;
 theme.addEventListener("click", () => {
-  if (darkModeEnabled) {
+  if (mode === "dark") {
     localStorage.setItem("mode", "light");
-    darkModeEnabled = false;
   } else {
     localStorage.setItem("mode", "dark");
-    darkModeEnabled = true;
   }
   mode = localStorage.getItem("mode");
   changeTheme();
@@ -59,6 +78,10 @@ function changeTheme() {
     searchIcon.src = "icons/search-solid.svg";
   }
 }
+
+filter.addEventListener("click", () => {
+  options.classList.toggle("options-opened");
+});
 
 changeTheme();
 

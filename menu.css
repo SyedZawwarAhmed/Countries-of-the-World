@@ -10,12 +10,12 @@
 
 .search-bar {
   width: 35rem;
-  padding: 1.2em;
+  padding: 1.5em 2em;
   display: flex;
   justify-content: left;
   align-items: center;
   background-color: var(--lbg);
-  gap: 0.5em;
+  gap: 1em;
   box-shadow: var(--box-shadow);
   border-radius: var(--br);
 }
@@ -33,9 +33,13 @@
   background-color: var(--lbg);
 }
 
+.filer {
+  position: relative;
+}
+
 .selector {
   width: 20rem;
-  padding: 1.2rem;
+  padding: 1.5em 2em;
   background-color: var(--lbg);
   box-shadow: var(--box-shadow);
   border-radius: var(--br);
@@ -55,4 +59,28 @@
   border-top: 0.5rem solid var(--text);
   border-right: 0.5rem solid transparent;
   border-left: 0.5rem solid transparent;
+}
+
+.options {
+  position: absolute;
+  width: 20rem;
+  margin-top: 1em;
+  border-radius: var(--br);
+  overflow: hidden;
+  display: none;
+  box-shadow: var(--box-shadow);
+}
+
+.options-opened {
+  display: block;
+}
+
+.region {
+  font-size: 1.2rem;
+  padding: 1em;
+  background-color: var(--lbg);
+}
+
+.region:hover {
+  background-color: var(--bg);
 }
