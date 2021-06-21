@@ -15,6 +15,12 @@
   border-radius: var(--br);
   overflow: hidden;
   box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.country:hover {
+  transform: scale(1.05);
+  transition: 0.1s;
 }
 
 .flag-container {
