@@ -18,7 +18,7 @@ fetch("https://restcountries.eu/rest/v2/all")
   .then((data) => {
     countries = data;
     countries.forEach((country) => {
-      main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+      main.innerHTML += `<div class="country" onclick="slide()"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
@@ -37,8 +37,7 @@ fetch("https://restcountries.eu/rest/v2/all")
             countries.forEach((country, j) => {
               countryContainer[j].style.display = "unset";
             });
-          }
-          else if (
+          } else if (
             country.region.toLowerCase() !==
             reg.getAttribute("data-value").toLowerCase()
           ) {
@@ -79,9 +78,14 @@ function changeTheme() {
   }
 }
 
+function slide() {
+  main.classList.add("slided");
+}
+
 filter.addEventListener("click", () => {
   options.classList.toggle("options-opened");
 });
+
 
 changeTheme();
 

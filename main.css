@@ -8,6 +8,11 @@
   gap: 5rem;
   justify-content: center;
   align-items: center;
+  transition: 0.4s;
+}
+
+.slided {
+  transform: translateX(-110%);
 }
 
 .country {
