@@ -1,6 +1,6 @@
 #main {
   margin: 0 auto;
-  padding: 2em 5em;
+  padding: 2em 0;
   width: 100%;
   max-width: 102rem;
   display: grid;
@@ -8,7 +8,6 @@
   gap: 5rem;
   justify-content: center;
   align-items: center;
-  transition: 0.4s;
 }
 
 .slided {

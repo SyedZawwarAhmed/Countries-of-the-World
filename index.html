@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="menu.css" />
     <link rel="stylesheet" href="main.css" />
   </head>
@@ -25,38 +26,41 @@
         </div>
       </div>
     </header>
-    <div class="menu">
-      <div id="search-bar" class="search-bar">
-        <img
-          id="search-icon"
-          class="search-icon"
-          src="icons/search-solid.svg"
-          alt=""
-        />
-        <input
-          id="search"
-          class="search"
-          type="text"
-          placeholder="Search for a country..."
-        />
-      </div>
-      <div id="filter" class="filter">
-        <div class="selector">
-          <span>Filter By Region</span>
-          <div class="triangle"></div>
+    <div id="home" class="home">
+      <div id="menu" class="menu">
+        <div id="search-bar" class="search-bar">
+          <img
+            id="search-icon"
+            class="search-icon"
+            src="icons/search-solid.svg"
+            alt=""
+          />
+          <input
+            id="search"
+            class="search"
+            type="text"
+            placeholder="Search for a country..."
+          />
         </div>
-        <div class="options">
-          <div class="region" data-value="All">All</div>
-          <div class="region" data-value="Asia">Asia</div>
-          <div class="region" data-value="Africa">Africa</div>
-          <div class="region" data-value="Europe">Europe</div>
-          <div class="region" data-value="Americas">Americas</div>
-          <div class="region" data-value="Oceania">Oceania</div>
-          <div class="region" data-value="Polar">Polar</div>
+        <div id="filter" class="filter">
+          <div class="selector">
+            <span>Filter By Region</span>
+            <div class="triangle"></div>
+          </div>
+          <div class="options">
+            <div class="region" data-value="All">All</div>
+            <div class="region" data-value="Asia">Asia</div>
+            <div class="region" data-value="Africa">Africa</div>
+            <div class="region" data-value="Europe">Europe</div>
+            <div class="region" data-value="Americas">Americas</div>
+            <div class="region" data-value="Oceania">Oceania</div>
+            <div class="region" data-value="Polar">Polar</div>
+          </div>
         </div>
       </div>
+      <div id="main"></div>
     </div>
-    <div id="main"></div>
+    <div class="country-page" id="country-page"></div>
   </body>
   <script src="app.js"></script>
 </html>

@@ -1,9 +1,11 @@
 const root = document.querySelector(":root"),
+  home = document.getElementById("home"),
   main = document.getElementById("main"),
   theme = document.getElementById("theme"),
   searchBar = document.getElementById("search-bar"),
   countryName = document.getElementsByClassName("country-name"),
   moon = document.getElementById("moon"),
+  menu = document.getElementById("menu"),
   searchIcon = document.getElementById("search-icon"),
   search = document.getElementById("search"),
   filter = document.getElementById("filter"),
@@ -79,7 +81,7 @@ function changeTheme() {
 }
 
 function slide() {
-  main.classList.add("slided");
+  home.classList.add("slided");
 }
 
 filter.addEventListener("click", () => {
