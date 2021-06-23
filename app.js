@@ -11,7 +11,10 @@ const root = document.querySelector(":root"),
   filter = document.getElementById("filter"),
   countryContainer = document.getElementsByClassName("country"),
   options = document.querySelector(".options"),
-  regions = document.getElementsByClassName("region");
+  regions = document.getElementsByClassName("region"),
+  countryPage = document.getElementById("country-page"),
+  backBtn = document.getElementById("back-btn"),
+  arrow = document.getElementById("arrow");
 
 let countries = [];
 
@@ -69,24 +72,31 @@ function changeTheme() {
     root.style.setProperty("--bg", "#202c37");
     root.style.setProperty("--text", "#ffffff");
     root.style.setProperty("--lbg", "#2b3945");
-    moon.src = "icons/moon-solid.svg";
+    moon.src = "icons/moon-regular.svg";
     searchIcon.src = "icons/search-regular.svg";
+    arrow.src = "icons/arrow-left-regular.svg"
   } else {
     root.style.setProperty("--bg", "#fafafa");
     root.style.setProperty("--text", "#111517");
     root.style.setProperty("--lbg", "#ffffff");
-    moon.src = "icons/moon-regular.svg";
+    moon.src = "icons/moon-solid.svg";
     searchIcon.src = "icons/search-solid.svg";
+    arrow.src = "icons/arrow-left-solid.svg"
   }
 }
 
 function slide() {
-  home.classList.add("slided");
+  // home.classList.add("slided");
+  countryPage.style.transform = "translateX(0)";
 }
 
 filter.addEventListener("click", () => {
   options.classList.toggle("options-opened");
 });
+
+backBtn.addEventListener("click", () => {
+  countryPage.style.transform = "translateX(100%)";
+})
 
 
 changeTheme();

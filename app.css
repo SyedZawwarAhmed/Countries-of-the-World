@@ -31,5 +31,5 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--text);
-  overflow: hidden;
+  overflow-x: hidden;
 }

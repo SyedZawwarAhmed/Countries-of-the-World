@@ -12,55 +12,65 @@
     />
     <link rel="stylesheet" href="app.css" />
     <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="menu.css" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="country-page.css" />
   </head>
   <body>
     <header>
       <div class="header">
         <h3 class="title">Where in the world?</h3>
         <div id="theme" class="theme">
-          <img id="moon" class="moon" src="icons/moon-regular.svg" alt="" />
+          <img id="moon" class="moon" src="icons/moon-solid.svg" alt="" />
           <span>Dark Mode</span>
         </div>
       </div>
     </header>
-    <div id="home" class="home">
-      <div id="menu" class="menu">
-        <div id="search-bar" class="search-bar">
-          <img
-            id="search-icon"
-            class="search-icon"
-            src="icons/search-solid.svg"
-            alt=""
-          />
-          <input
-            id="search"
-            class="search"
-            type="text"
-            placeholder="Search for a country..."
-          />
-        </div>
-        <div id="filter" class="filter">
-          <div class="selector">
-            <span>Filter By Region</span>
-            <div class="triangle"></div>
+    <main>
+      <div id="home" class="home">
+        <div id="menu" class="menu">
+          <div id="search-bar" class="search-bar">
+            <img
+              id="search-icon"
+              class="search-icon"
+              src="icons/search-solid.svg"
+              alt=""
+            />
+            <input
+              id="search"
+              class="search"
+              type="text"
+              placeholder="Search for a country..."
+            />
           </div>
-          <div class="options">
-            <div class="region" data-value="All">All</div>
-            <div class="region" data-value="Asia">Asia</div>
-            <div class="region" data-value="Africa">Africa</div>
-            <div class="region" data-value="Europe">Europe</div>
-            <div class="region" data-value="Americas">Americas</div>
-            <div class="region" data-value="Oceania">Oceania</div>
-            <div class="region" data-value="Polar">Polar</div>
+          <div id="filter" class="filter">
+            <div class="selector">
+              <span>Filter By Region</span>
+              <div class="triangle"></div>
+            </div>
+            <div class="options">
+              <div class="region" data-value="All">All</div>
+              <div class="region" data-value="Asia">Asia</div>
+              <div class="region" data-value="Africa">Africa</div>
+              <div class="region" data-value="Europe">Europe</div>
+              <div class="region" data-value="Americas">Americas</div>
+              <div class="region" data-value="Oceania">Oceania</div>
+              <div class="region" data-value="Polar">Polar</div>
+            </div>
+          </div>
+        </div>
+        <div id="main"></div>
+      </div>
+      <div class="country-page" id="country-page">
+        <div class="country-information">
+          <div id="back-btn" class="back-btn">
+            <img id="arrow" src="icons/arrow-left-solid.svg" alt="" />
+            <span>Back</span>
           </div>
         </div>
       </div>
-      <div id="main"></div>
-    </div>
-    <div class="country-page" id="country-page"></div>
+    </main>
   </body>
   <script src="app.js"></script>
 </html>
