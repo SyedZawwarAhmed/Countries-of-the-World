@@ -1,4 +1,5 @@
 const root = document.querySelector(":root"),
+  body = document.querySelector("body"),
   home = document.getElementById("home"),
   main = document.getElementById("main"),
   theme = document.getElementById("theme"),
@@ -86,8 +87,8 @@ function changeTheme() {
 }
 
 function slide() {
-  // home.classList.add("slided");
   countryPage.style.transform = "translateX(0)";
+  body.style.overflowY = "hidden";
 }
 
 filter.addEventListener("click", () => {
@@ -95,6 +96,7 @@ filter.addEventListener("click", () => {
 });
 
 backBtn.addEventListener("click", () => {
+  body.style.overflowY = "scroll";
   countryPage.style.transform = "translateX(100%)";
 })
 

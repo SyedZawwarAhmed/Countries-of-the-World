@@ -32,4 +32,5 @@ body {
   align-items: center;
   color: var(--text);
   overflow-x: hidden;
+  transition: 0.4s;
 }
