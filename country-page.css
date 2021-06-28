@@ -10,14 +10,11 @@
   max-width: 102rem;
   padding: 2em 5em;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
 }
 
 .back-btn {
-  width: max-content;
   padding: 1em 4em;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 1.2em;
