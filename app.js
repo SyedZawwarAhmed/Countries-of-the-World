@@ -17,14 +17,16 @@ const root = document.querySelector(":root"),
   backBtn = document.getElementById("back-btn"),
   arrow = document.getElementById("arrow");
 
+const cn = document.getElementById("cn")
+
 let countries = [];
 
 fetch("https://restcountries.eu/rest/v2/all")
   .then((res) => res.json())
   .then((data) => {
     countries = data;
-    countries.forEach((country) => {
-      main.innerHTML += `<div class="country" onclick="slide()"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+    countries.forEach((country, j) => {
+      main.innerHTML += `<div class="country" onclick="slide({name:'${country.name}'})"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
@@ -86,9 +88,11 @@ function changeTheme() {
   }
 }
 
-function slide() {
+function slide(country) {
   countryPage.style.transform = "translateX(0)";
   body.style.overflowY = "hidden";
+  cn.innerText = country.name;
+  console.log(country.name)
 }
 
 filter.addEventListener("click", () => {

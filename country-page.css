@@ -13,6 +13,7 @@
 }
 
 .back-btn {
+  margin: 4rem 0;
   padding: 1em 4em;
   display: inline-flex;
   justify-content: center;
@@ -31,4 +32,34 @@
 .back-btn span {
   font-size: 1.5rem;
   font-weight: 800;
+}
+
+.main-container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem
+}
+
+.big-flag {
+  width: 45rem;
+}
+
+.detailed-details {
+  align-self: center;
+}
+
+.detailed-details h1 {
+  font-size: 3rem;
+  margin-bottom: 0.6em;
+}
+
+.facts-and-figures {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-1 > span, .col-2 > span {
+  display: block;
+  font-size: 1.2rem;
 }
