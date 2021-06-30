@@ -34,3 +34,7 @@ body {
   overflow-x: hidden;
   transition: 0.4s;
 }
+
+strong {
+  font-weight: 800; 
+}
