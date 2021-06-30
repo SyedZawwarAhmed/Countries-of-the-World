@@ -43,6 +43,7 @@
 
 .big-flag {
   width: 45rem;
+  height: 30rem;
 }
 
 .detailed-details {
@@ -55,11 +56,13 @@
 }
 
 .facts-and-figures {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
 }
 
-.col-1 > span, .col-2 > span {
+.col-1-span, .col-2-span {
   display: block;
   font-size: 1.2rem;
+  margin-bottom: 1em;
 }

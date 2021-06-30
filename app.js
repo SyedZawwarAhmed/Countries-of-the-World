@@ -29,7 +29,11 @@ fetch("https://restcountries.eu/rest/v2/all")
   .then((data) => {
     countries = data;
     countries.forEach((country) => {
-      main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${country.flag}', name:'${country.name}', nativeName:'${country.nativeName}', population:'${country.population}', region:'${country.region}', subregion:'${country.subregion}', capital:'${country.capital}', topLevelDomain:'${country.topleveldomain}', currencies:'${country.currencies}', languages:'${country.languages}'})"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+      let currencyString = '';
+      country.currencies.forEach(currency => { currencyString += currency.name + " "})
+      let languageString = '';
+      country.languages.forEach(currency => { languageString += currency.name + " "})
+      main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${country.flag}', name:'${country.name}', nativeName:'${country.nativeName}', population:'${country.population}', region:'${country.region}', subregion:'${country.subregion}', capital:'${country.capital}', topLevelDomain:'${country.topLevelDomain}', currencies: '${currencyString}', languages:'${languageString}'})"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
@@ -97,13 +101,15 @@ function displayCountry(country) {
 
   bigFlag.src = country.flag;
   cn.innerText = country.name;
-  col1Span[0].innerText += " " + country.nativeName;
-  col1Span[1].innerText += " " + country.population;
-  col1Span[2].innerText += " " + country.region;
-  col1Span[3].innerText += " " + country.subregion;
-  col1Span[4].innerText += " " + country.capital;
+  col1Span[0].innerHTML = `<strong>Native Name: </strong>${country.nativeName}`;
+  col1Span[1].innerHTML = `<strong>Population: </strong>${country.population}`;
+  col1Span[2].innerHTML = `<strong>Region: </strong>${country.region}`;
+  col1Span[3].innerHTML = `<strong>Sub Region: </strong>${country.subregion}`;
+  col1Span[4].innerHTML = `<strong>Capital: </strong>${country.capital}`;
 
-  col2Span[0].innerText += " " + country.topleveldomain;
+  col2Span[0].innerHTML = `<strong>Top Level Domain: </strong>${country.topLevelDomain}`;
+  col2Span[1].innerHTML = `<strong>Currencies: </strong>${country.currencies}`;
+  col2Span[2].innerHTML = `<strong>Languages: </strong>${country.languages}`;
 }
 
 filter.addEventListener("click", () => {
