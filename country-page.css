@@ -44,6 +44,7 @@
 .big-flag {
   width: 45rem;
   height: 30rem;
+  box-shadow: var(--box-shadow);
 }
 
 .detailed-details {
@@ -65,4 +66,8 @@
   display: block;
   font-size: 1.2rem;
   margin-bottom: 1em;
+}
+
+.border-countries {
+  font-size: 1.2rem;
 }

@@ -20,7 +20,8 @@ const root = document.querySelector(":root"),
 const bigFlag = document.getElementById("big-flag"),
   cn = document.getElementById("cn"),
   col1Span = document.getElementsByClassName("col-1-span"),
-  col2Span = document.getElementsByClassName("col-2-span");
+  col2Span = document.getElementsByClassName("col-2-span"),
+  borderCountries = document.getElementById("border-countries");
 
 let countries = [];
 
@@ -29,11 +30,37 @@ fetch("https://restcountries.eu/rest/v2/all")
   .then((data) => {
     countries = data;
     countries.forEach((country) => {
-      let currencyString = '';
-      country.currencies.forEach(currency => { currencyString += currency.name + " "})
-      let languageString = '';
-      country.languages.forEach(currency => { languageString += currency.name + " "})
-      main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${country.flag}', name:'${country.name}', nativeName:'${country.nativeName}', population:'${country.population}', region:'${country.region}', subregion:'${country.subregion}', capital:'${country.capital}', topLevelDomain:'${country.topLevelDomain}', currencies: '${currencyString}', languages:'${languageString}'})"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+      let currencyString = "";
+      country.currencies.forEach((currency) => {
+        currencyString += currency.name + " ";
+      });
+      let languageString = "";
+      country.languages.forEach((currency) => {
+        languageString += currency.name + " ";
+      });
+      main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${
+        country.flag
+      }', name:'${country.name}', nativeName:'${
+        country.nativeName
+      }', population:'${country.population}', region:'${
+        country.region
+      }', subregion:'${country.subregion}', capital:'${
+        country.capital
+      }', topLevelDomain:'${
+        country.topLevelDomain
+      }', currencies: '${currencyString}', languages:'${languageString}', borders: '${country.borders.join(
+        " "
+      )}'})"><div class="flag-container"><img class="flag" src=${
+        country.flag
+      }></div><div class="country-details"><h2 class="country-name">${
+        country.name
+      }</h2><span><strong>Population: </strong>${
+        country.population
+      }</span><br><span><strong>Region: </strong>${
+        country.region
+      }</span><br><span><strong>Capital: </strong>${
+        country.capital
+      }</span></div></div>`;
     });
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
@@ -110,6 +137,9 @@ function displayCountry(country) {
   col2Span[0].innerHTML = `<strong>Top Level Domain: </strong>${country.topLevelDomain}`;
   col2Span[1].innerHTML = `<strong>Currencies: </strong>${country.currencies}`;
   col2Span[2].innerHTML = `<strong>Languages: </strong>${country.languages}`;
+
+  let borderCountriesLinks = country.borders;
+  borderCountries.innerHTML = `<strong>Border Countries: </strong> ${borderCountriesLinks}`;
 }
 
 filter.addEventListener("click", () => {
