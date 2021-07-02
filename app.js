@@ -38,6 +38,12 @@ fetch("https://restcountries.eu/rest/v2/all")
       country.languages.forEach((currency) => {
         languageString += currency.name + " ";
       });
+      let borderCountriesString = [];
+      country.borders.forEach((border) => {
+        borderCountriesString.push(countries.find(
+          (item) => item.alpha3Code === border
+        ).name);
+      });
       main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${
         country.flag
       }', name:'${country.name}', nativeName:'${
@@ -48,9 +54,7 @@ fetch("https://restcountries.eu/rest/v2/all")
         country.capital
       }', topLevelDomain:'${
         country.topLevelDomain
-      }', currencies: '${currencyString}', languages:'${languageString}', borders: '${country.borders.join(
-        " "
-      )}'})"><div class="flag-container"><img class="flag" src=${
+      }', currencies: '${currencyString}', languages:'${languageString}', borders: '${borderCountriesString}'})"><div class="flag-container"><img class="flag" src=${
         country.flag
       }></div><div class="country-details"><h2 class="country-name">${
         country.name
@@ -138,8 +142,9 @@ function displayCountry(country) {
   col2Span[1].innerHTML = `<strong>Currencies: </strong>${country.currencies}`;
   col2Span[2].innerHTML = `<strong>Languages: </strong>${country.languages}`;
 
-  let borderCountriesLinks = country.borders;
-  borderCountries.innerHTML = `<strong>Border Countries: </strong> ${borderCountriesLinks}`;
+  let border = "";
+  country.borders.split(",").forEach(item => border += `<span class="border">${item}</span>`);
+  borderCountries.innerHTML = `<strong>Border Countries: </strong> ${border}`;
 }
 
 filter.addEventListener("click", () => {
