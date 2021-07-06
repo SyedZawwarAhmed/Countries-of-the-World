@@ -143,8 +143,8 @@ function displayCountry(country) {
   col2Span[2].innerHTML = `<strong>Languages: </strong>${country.languages}`;
 
   let border = "";
-  country.borders.split(",").forEach(item => border += `<span class="border">${item}</span>`);
-  borderCountries.innerHTML = `<strong>Border Countries: </strong> ${border}`;
+  country.borders.split(",").forEach(item => border += `<span class="border" onclick="displayCountry()">${item}</span>`);
+  borderCountries.innerHTML = `<strong style="min-width: 15ch">Border Countries: </strong><div>${border}</div>`;
 }
 
 filter.addEventListener("click", () => {

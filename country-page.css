@@ -1,6 +1,6 @@
 .country-page {
   position: fixed;
-  inset: 6.77rem 0 0 0;
+  inset: 94px 0 0 0;
   transform: translateX(100%);
   background-color: var(--bg);
   transition: 0.4s;
@@ -70,15 +70,15 @@
 
 .border-countries {
   display: flex;
-  grid-template-columns: 15ch 1fr;
   font-size: 1.2rem;
 }
 
 .border {
   display: inline-block;
-  padding: 0.5em 1.5em;
-  margin: 0 0 0 1rem;
+  padding: 0.3em 1em;
+  margin: 0 0.5rem 0.5rem 0;
   background-color: var(--lbg);
   box-shadow: var(--box-shadow);
   border-radius: var(--br);
+  cursor: pointer;
 }
