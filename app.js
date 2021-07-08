@@ -35,8 +35,8 @@ fetch("https://restcountries.eu/rest/v2/all")
         currencyString += currency.name + " ";
       });
       let languageString = "";
-      country.languages.forEach((currency) => {
-        languageString += currency.name + " ";
+      country.languages.forEach((language) => {
+        languageString += language.name + " ";
       });
       let borderCountriesString = [];
       country.borders.forEach((border) => {
@@ -44,17 +44,7 @@ fetch("https://restcountries.eu/rest/v2/all")
           (item) => item.alpha3Code === border
         ).name);
       });
-      main.innerHTML += `<div class="country" onclick="displayCountry({flag:'${
-        country.flag
-      }', name:'${country.name}', nativeName:'${
-        country.nativeName
-      }', population:'${country.population}', region:'${
-        country.region
-      }', subregion:'${country.subregion}', capital:'${
-        country.capital
-      }', topLevelDomain:'${
-        country.topLevelDomain
-      }', currencies: '${currencyString}', languages:'${languageString}', borders: '${borderCountriesString}'})"><div class="flag-container"><img class="flag" src=${
+      main.innerHTML += `<div class="country" onclick="displayCountry({flag: '${country.flag}', name: '${country.name}', nativeName: '${country.nativeName}', population: '${country.population}', region: '${country.region}'})"><div class="flag-container"><img class="flag" src=${
         country.flag
       }></div><div class="country-details"><h2 class="country-name">${
         country.name
