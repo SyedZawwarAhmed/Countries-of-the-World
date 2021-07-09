@@ -44,7 +44,7 @@ fetch("https://restcountries.eu/rest/v2/all")
           (item) => item.alpha3Code === border
         ).name);
       });
-      main.innerHTML += `<div class="country" onclick="displayCountry({flag: '${country.flag}', name: '${country.name}', nativeName: '${country.nativeName}', population: '${country.population}', region: '${country.region}'})"><div class="flag-container"><img class="flag" src=${
+      main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${
         country.flag
       }></div><div class="country-details"><h2 class="country-name">${
         country.name
@@ -56,6 +56,30 @@ fetch("https://restcountries.eu/rest/v2/all")
         country.capital
       }</span></div></div>`;
     });
+    for (let i = 0; i < countryContainer.length; i++) {
+      const item = countryContainer[i];
+      item.addEventListener("click", () => {
+        countryPage.style.transform = "translateX(0)";
+        body.style.overflowY = "hidden";
+      
+        bigFlag.src = countries[i].flag;
+        cn.innerText = countries[i].name;
+        col1Span[0].innerHTML = `<strong>Native Name: </strong>${countries[i].nativeName}`;
+        col1Span[1].innerHTML = `<strong>Population: </strong>${countries[i].population}`;
+        col1Span[2].innerHTML = `<strong>Region: </strong>${countries[i].region}`;
+        col1Span[3].innerHTML = `<strong>Sub Region: </strong>${countries[i].subregion}`;
+        col1Span[4].innerHTML = `<strong>Capital: </strong>${countries[i].capital}`;
+      
+        col2Span[0].innerHTML = `<strong>Top Level Domain: </strong>${countries[i].topLevelDomain}`;
+        col2Span[1].innerHTML = `<strong>Currencies: </strong>${countries[i].currencies}`;
+        col2Span[2].innerHTML = `<strong>Languages: </strong>${countries[i].languages}`;
+      
+        let border = "";
+        country.borders.split(",").forEach(item => border += `<span class="border" onclick="displayCountry()">${item}</span>`);
+        borderCountries.innerHTML = `<strong style="min-width: 15ch">Border Countries: </strong><div>${border}</div>`;
+      })
+    }
+
     search.addEventListener("input", () => {
       countries.forEach((country, j) => {
         if (!country.name.toLowerCase().includes(search.value.toLowerCase())) {
