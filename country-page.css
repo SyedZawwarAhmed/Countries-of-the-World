@@ -42,7 +42,7 @@
 }
 
 .big-flag {
-  width: 40rem;
+  width: 35rem;
   height: 25rem;
   box-shadow: var(--box-shadow);
   object-fit: cover;
