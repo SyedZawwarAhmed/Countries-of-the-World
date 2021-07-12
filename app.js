@@ -47,12 +47,14 @@ fetch("https://restcountries.eu/rest/v2/all")
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
-          currencyString += currency.name + " ";
+          currencyString += currency.name + ", ";
         });
+        currencyString = currencyString.substr(0, currencyString.length-2)
         let languageString = "";
         country.languages.forEach((language) => {
-          languageString += language.name + " ";
+          languageString += language.name + ", ";
         });
+        languageString = languageString.substr(0, languageString.length-2)
         let borderCountriesString = [];
         country.borders.forEach((border) => {
           borderCountriesString.push(
