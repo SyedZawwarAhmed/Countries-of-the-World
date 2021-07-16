@@ -18,6 +18,8 @@
 
   /* Typography  */
   font-size: 14px;
+
+  --padd-x: 5em;
   
   --icon-w: 1.5rem;
   --box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1);
@@ -37,4 +39,16 @@ body {
 
 strong {
   font-weight: 800; 
+}
+
+@media screen and (max-width: 951px) {
+  :root {
+    --padd-x: 3em;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  :root {
+    --padd-x: 2em;
+  }
 }

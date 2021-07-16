@@ -77,10 +77,31 @@
 
 .region {
   font-size: 1.2rem;
-  padding: 1em;
+  padding: 0.8em;
   background-color: var(--lbg);
 }
 
 .region:hover {
   background-color: var(--bg);
+}
+
+@media screen and (max-width: 874px) {
+  .search-bar {
+    width: 25rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .menu {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .filter {
+    align-self: flex-start;
+  }
 }

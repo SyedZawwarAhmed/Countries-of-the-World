@@ -1,5 +1,5 @@
 .home {
-  padding: 0 5em;
+  padding: 0 var(--padd-x);
   max-width: 102rem;
   transition: 0.4s;
   margin: 0 auto;
@@ -59,4 +59,11 @@ span {
 
 strong {
   font-weight: 600;
+}
+
+
+@media screen and (max-width: 896px) {
+  #main {
+    gap: 3rem;
+  }
 }
