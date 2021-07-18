@@ -43,7 +43,7 @@ fetch("https://restcountries.eu/rest/v2/all")
 
       function displayCountry(country) {
         countryPage.style.transform = "translateX(0)";
-        body.style.overflowY = "hidden";
+        home.style.overflowY = "hidden";
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
@@ -153,7 +153,7 @@ filter.addEventListener("click", () => {
 });
 
 backBtn.addEventListener("click", () => {
-  body.style.overflowY = "scroll";
+  home.style.overflowY = "scroll";
   countryPage.style.transform = "translateX(100%)";
 });
 
