@@ -67,3 +67,9 @@ strong {
     gap: 3rem;
   }
 }
+
+@media screen and (max-width: 573px) {
+  #main {
+    grid-template-columns: min(20rem, 100%);
+  }
+}
