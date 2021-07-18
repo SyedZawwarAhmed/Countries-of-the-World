@@ -13,11 +13,11 @@ const root = document.querySelector(":root"),
   countryContainer = document.getElementsByClassName("country"),
   options = document.querySelector(".options"),
   regions = document.getElementsByClassName("region"),
-  countryPage = document.getElementById("country-page"),
   backBtn = document.getElementById("back-btn"),
   arrow = document.getElementById("arrow");
 
-const bigFlag = document.getElementById("big-flag"),
+const countryPage = document.getElementById("country-page"),
+  bigFlag = document.getElementById("big-flag"),
   cn = document.getElementById("cn"),
   col1Span = document.getElementsByClassName("col-1-span"),
   col2Span = document.getElementsByClassName("col-2-span"),
@@ -38,23 +38,24 @@ fetch("https://restcountries.eu/rest/v2/all")
       let country = countries[i];
 
       item.addEventListener("click", () => {
-        displayCountry(country)
+        displayCountry(country);
       });
 
       function displayCountry(country) {
         countryPage.style.transform = "translateX(0)";
+        countryPage.scrollTop = 0;
         home.style.overflowY = "hidden";
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
           currencyString += currency.name + ", ";
         });
-        currencyString = currencyString.substr(0, currencyString.length-2)
+        currencyString = currencyString.substr(0, currencyString.length - 2);
         let languageString = "";
         country.languages.forEach((language) => {
           languageString += language.name + ", ";
         });
-        languageString = languageString.substr(0, languageString.length-2)
+        languageString = languageString.substr(0, languageString.length - 2);
         let borderCountriesString = [];
         country.borders.forEach((border) => {
           borderCountriesString.push(
