@@ -42,9 +42,9 @@ fetch("https://restcountries.eu/rest/v2/all")
       });
 
       function displayCountry(country) {
+        home.classList.add("overflow-stop");
         countryPage.style.transform = "translateX(0)";
         countryPage.scrollTop = 0;
-        home.style.overflowY = "hidden";
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
@@ -154,7 +154,7 @@ filter.addEventListener("click", () => {
 });
 
 backBtn.addEventListener("click", () => {
-  home.style.overflowY = "scroll";
+  home.classList.remove("overflow-stop");
   countryPage.style.transform = "translateX(100%)";
 });
 
