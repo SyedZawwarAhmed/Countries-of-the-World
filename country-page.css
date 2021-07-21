@@ -44,13 +44,15 @@
 
 .big-flag {
   width: 35rem;
-  height: auto;
+  height: 25rem;
   box-shadow: var(--box-shadow);
   object-fit: cover;
 }
 
 .detailed-details {
   align-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .detailed-details h1 {
@@ -87,7 +89,7 @@
 
 @media screen and (max-width: 1260px) {
   .big-flag {
-    width: min(32rem, 100%)
+    width: 32rem
   }
 }
 
@@ -97,7 +99,6 @@
   }
 
   .big-flag {
-    margin: 0 auto;
     width: min(30rem, 100%);
     height: auto;
   }

@@ -1,13 +1,9 @@
 .home {
-  /* height: 100vh; */
+  height: 100vh;
   padding: 0 var(--padd-x);
   max-width: 102rem;
   transition: 0.4s;
   margin: 0 auto;
-}
-
-.overflow-stop {
-  position: fixed;
 }
 
 #main {

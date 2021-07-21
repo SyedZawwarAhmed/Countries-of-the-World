@@ -42,7 +42,8 @@ fetch("https://restcountries.eu/rest/v2/all")
       });
 
       function displayCountry(country) {
-        home.classList.add("overflow-stop");
+        home.style.overflowY = "hidden";
+        home.style.display = "none"
         countryPage.style.transform = "translateX(0)";
         countryPage.scrollTop = 0;
 
@@ -153,8 +154,19 @@ filter.addEventListener("click", () => {
   options.classList.toggle("options-opened");
 });
 
+let scroll = document.documentElement.scrollTop;
+home.style.overflowY = "visible";
+document.addEventListener("scroll", () => {
+  if (home.style.overflowY === "visible") {
+    console.log("scrolled");
+    scroll = document.documentElement.scrollTop;
+  }
+});
+
 backBtn.addEventListener("click", () => {
-  home.classList.remove("overflow-stop");
+  home.style.display = "block"
+  home.style.overflowY = "visible"
+  document.documentElement.scrollTop = scroll;
   countryPage.style.transform = "translateX(100%)";
 });
 
