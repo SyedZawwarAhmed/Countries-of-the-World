@@ -71,7 +71,7 @@ fetch("https://restcountries.eu/rest/v2/all")
 
 ## Author
 
-- [Syed Zawwar Ahmed]
+- Syed Zawwar Ahmed
 - Frontend Mentor - [@SyedZawwarAhmed](https://www.frontendmentor.io/profile/SyedZawwarAhmed)
 - Github - [@SyedZawwarAhmed](https://github.com/SyedZawwarAhmed)
 - Linkedin - [@SyedZawwarAhmed](https://www.linkedin.com/in/syed-zawwar-ahmed-b7345a1b8/)
