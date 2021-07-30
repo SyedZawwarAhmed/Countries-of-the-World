@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/SyedZawwarAhmed/Rest-Countries-API)
-- Live Site URL: [Add live site URL here](https://syedzawwarahmed.github.io/Rest-Countries-API/)
+- Solution URL: [https://github.com/SyedZawwarAhmed/Rest-Countries-API](https://github.com/SyedZawwarAhmed/Rest-Countries-API)
+- Live Site URL: [https://syedzawwarahmed.github.io/Rest-Countries-API/](https://syedzawwarahmed.github.io/Rest-Countries-API/)
 
 ## My process
 
