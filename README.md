@@ -66,8 +66,8 @@ fetch("https://restcountries.eu/rest/v2/all")
 
 ### Useful resources
 
-- [Resource 1](https://www.stackoverflow.com) - As always, when I got stuck, stackoverflow helped me get through.
-- [Resource 2](https://www.w3schools.com) - In my opinion, this is the best website for documentation with easily understandable code examples.
+- [Stack Overflow](https://www.stackoverflow.com) - As always, when I got stuck, stackoverflow helped me get through.
+- [w3Schools](https://www.w3schools.com) - In my opinion, this is the best website for documentation with easily understandable code examples.
 
 ## Author
 
