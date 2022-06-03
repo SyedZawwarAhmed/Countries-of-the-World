@@ -4,7 +4,8 @@
   transform: translateX(100%);
   background-color: var(--bg);
   transition: 0.4s;
-  overflow: auto;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch
 }
 
 .country-information {

@@ -31,7 +31,7 @@ fetch("https://restcountries.com/v2/all")
   .then((res) => res.json())
   .then((data) => {
     countries = data;
-    loading.innerHTML = ""
+    loading.innerHTML = "";
     countries.forEach((country) => {
       main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
@@ -45,9 +45,8 @@ fetch("https://restcountries.com/v2/all")
 
       function displayCountry(country) {
         home.style.touchAction = "none";
-        // home.style.display = "none"
+        // countryPage.style.touchAction = "none"
         countryPage.style.transform = "translateX(0)";
-        // countryPage.scrollTop = 0;
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
@@ -59,12 +58,12 @@ fetch("https://restcountries.com/v2/all")
           languageString += language.name + ", ";
         });
         languageString = languageString.substr(0, languageString.length - 2);
-        let borderCountriesString = [];
-        country.borders.forEach((border) => {
-          borderCountriesString.push(
-            countries.find((item) => item.alpha3Code === border).name
-          );
-        });
+        // let borderCountriesString = [];
+        // country.borders.forEach((border) => {
+        //   borderCountriesString.push(
+        //     countries.find((item) => item.alpha3Code === border).name
+        //   );
+        // });
 
         bigFlag.src = country.flag;
         cn.innerText = country.name;
@@ -78,17 +77,17 @@ fetch("https://restcountries.com/v2/all")
         col2Span[1].innerHTML = `<strong>Currencies: </strong>${currencyString}`;
         col2Span[2].innerHTML = `<strong>Languages: </strong>${languageString}`;
 
-        let border = "";
-        borderCountriesString.forEach(
-          (item) => (border += `<span class="border">${item}</span>`)
-        );
-        borderCountries.innerHTML = `<strong style="min-width: 15ch">Border Countries: </strong><div>${border}</div>`;
-        for (let j = 0; j < borders.length; j++) {
-          borders[j].addEventListener("click", () => {
-            let country = countries.find((e) => e.name == borders[j].innerText);
-            displayCountry(country);
-          });
-        }
+        // let border = "";
+        // borderCountriesString.forEach(
+        //   (item) => (border += `<span class="border">${item}</span>`)
+        // );
+        // borderCountries.innerHTML = `<strong style="min-width: 15ch">Border Countries: </strong><div>${border}</div>`;
+        // for (let j = 0; j < borders.length; j++) {
+        //   borders[j].addEventListener("click", () => {
+        //     let country = countries.find((e) => e.name == borders[j].innerText);
+        //     displayCountry(country);
+        //   });
+        // }
       }
     }
 
@@ -156,19 +155,17 @@ filter.addEventListener("click", () => {
   options.classList.toggle("options-opened");
 });
 
-let scroll = document.documentElement.scrollTop;
-home.style.overflowY = "visible";
-document.addEventListener("scroll", () => {
-  if (home.style.overflowY === "visible") {
-    console.log("scrolled");
-    scroll = document.documentElement.scrollTop;
-  }
-});
+// let scroll = document.documentElement.scrollTop;
+// home.style.overflowY = "visible";
+// document.addEventListener("scroll", () => {
+//   if (home.style.overflowY === "visible") {
+//     scroll = document.documentElement.scrollTop;
+//   }
+// });
 
 backBtn.addEventListener("click", () => {
-  // home.style.display = "block"
   home.style.touchAction = "auto";
-  // document.documentElement.scrollTop = scroll;
+  main.style.touchAction = "auto";
   countryPage.style.transform = "translateX(100%)";
 });
 
