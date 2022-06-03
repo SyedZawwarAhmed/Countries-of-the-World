@@ -14,8 +14,7 @@ const root = document.querySelector(":root"),
   options = document.querySelector(".options"),
   regions = document.getElementsByClassName("region"),
   backBtn = document.getElementById("back-btn"),
-  arrow = document.getElementById("arrow"),
-  loading = document.querySelector(".loading");
+  arrow = document.getElementById("arrow");
 
 const countryPage = document.getElementById("country-page"),
   bigFlag = document.getElementById("big-flag"),
@@ -31,7 +30,6 @@ fetch("https://restcountries.com/v2/all")
   .then((res) => res.json())
   .then((data) => {
     countries = data;
-    loading.innerHTML = ""
     countries.forEach((country) => {
       main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
@@ -44,10 +42,10 @@ fetch("https://restcountries.com/v2/all")
       });
 
       function displayCountry(country) {
-        home.style.touchAction = "none";
-        // home.style.display = "none"
+        home.style.overflowY = "hidden";
+        home.style.display = "none"
         countryPage.style.transform = "translateX(0)";
-        // countryPage.scrollTop = 0;
+        countryPage.scrollTop = 0;
 
         let currencyString = "";
         country.currencies.forEach((currency) => {
@@ -166,9 +164,9 @@ document.addEventListener("scroll", () => {
 });
 
 backBtn.addEventListener("click", () => {
-  // home.style.display = "block"
-  home.style.touchAction = "auto";
-  // document.documentElement.scrollTop = scroll;
+  home.style.display = "block"
+  home.style.overflowY = "visible"
+  document.documentElement.scrollTop = scroll;
   countryPage.style.transform = "translateX(100%)";
 });
 
