@@ -16,6 +16,19 @@
   gap: 5rem;
   justify-content: center;
   align-items: center;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loading-icon {
+  justify-self: center;
+  /* align-self: center; */
 }
 
 .slided {
@@ -61,7 +74,6 @@ span {
 strong {
   font-weight: 600;
 }
-
 
 @media screen and (max-width: 896px) {
   #main {
