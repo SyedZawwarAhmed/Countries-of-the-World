@@ -14,7 +14,8 @@ const root = document.querySelector(":root"),
   options = document.querySelector(".options"),
   regions = document.getElementsByClassName("region"),
   backBtn = document.getElementById("back-btn"),
-  arrow = document.getElementById("arrow");
+  arrow = document.getElementById("arrow"),
+  loading = document.querySelector(".loading");
 
 const countryPage = document.getElementById("country-page"),
   bigFlag = document.getElementById("big-flag"),
@@ -30,12 +31,13 @@ fetch("https://restcountries.com/v2/all")
   .then((res) => res.json())
   .then((data) => {
     countries = data;
+    loading.innerHTML = "";
     countries.forEach((country) => {
       main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
-    for (let i = 0; i < countryContainer.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       let item = countryContainer[i];
-      let country = countries[i];
+      let country = data[i];
 
       item.addEventListener("click", () => {
         displayCountry(country);
@@ -43,7 +45,7 @@ fetch("https://restcountries.com/v2/all")
 
       function displayCountry(country) {
         home.style.overflowY = "hidden";
-        home.style.display = "none"
+        home.style.display = "none";
         countryPage.style.transform = "translateX(0)";
         countryPage.scrollTop = 0;
 
@@ -58,11 +60,14 @@ fetch("https://restcountries.com/v2/all")
         });
         languageString = languageString.substr(0, languageString.length - 2);
         let borderCountriesString = [];
-        country.borders.forEach((border) => {
-          borderCountriesString.push(
-            countries.find((item) => item.alpha3Code === border).name
-          );
-        });
+
+        if (country.borders) {
+          country.borders.forEach((border) => {
+            borderCountriesString.push(
+              countries.find((item) => item.alpha3Code === border).name
+            );
+          });
+        }
 
         bigFlag.src = country.flag;
         cn.innerText = country.name;
@@ -158,14 +163,13 @@ let scroll = document.documentElement.scrollTop;
 home.style.overflowY = "visible";
 document.addEventListener("scroll", () => {
   if (home.style.overflowY === "visible") {
-    console.log("scrolled");
     scroll = document.documentElement.scrollTop;
   }
 });
 
 backBtn.addEventListener("click", () => {
-  home.style.display = "block"
-  home.style.overflowY = "visible"
+  home.style.display = "block";
+  home.style.overflowY = "visible";
   document.documentElement.scrollTop = scroll;
   countryPage.style.transform = "translateX(100%)";
 });
