@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/SyedZawwarAhmed/Rest-Countries-API](https://github.com/SyedZawwarAhmed/Rest-Countries-API)
-- Live Site URL: [https://syedzawwarahmed.github.io/Rest-Countries-API/](https://syedzawwarahmed.github.io/Rest-Countries-API/)
+- Live Site URL:[https://syedzawwarahmed.github.io/Countries-of-the-World/](https://syedzawwarahmed.github.io/Countries-of-the-World/)
 
 ## My process
 
