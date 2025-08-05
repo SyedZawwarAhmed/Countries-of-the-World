@@ -27,7 +27,7 @@ const countryPage = document.getElementById("country-page"),
 
 let countries = [];
 
-fetch("https://restcountries.com/v2/all")
+fetch("https://restcountries.com/v2/all?fields=name, flags, borders, population, region, capital, alpha3Code, languages, currencies")
   .then((res) => res.json())
   .then((data) => {
     countries = data;
