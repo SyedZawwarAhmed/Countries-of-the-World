@@ -33,7 +33,7 @@ fetch("https://restcountries.com/v2/all?fields=name&fields=flags&fields=borders&
     countries = data;
     loading.innerHTML = "";
     countries.forEach((country) => {
-      main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flag.png}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
+      main.innerHTML += `<div class="country"><div class="flag-container"><img class="flag" src=${country.flags.png}></div><div class="country-details"><h2 class="country-name">${country.name}</h2><span><strong>Population: </strong>${country.population}</span><br><span><strong>Region: </strong>${country.region}</span><br><span><strong>Capital: </strong>${country.capital}</span></div></div>`;
     });
     for (let i = 0; i < data.length; i++) {
       let item = countryContainer[i];
@@ -69,7 +69,7 @@ fetch("https://restcountries.com/v2/all?fields=name&fields=flags&fields=borders&
           });
         }
 
-        bigFlag.src = country.flag.png;
+        bigFlag.src = country.flags.png;
         cn.innerText = country.name;
         col1Span[0].innerHTML = `<strong>Native Name: </strong>${country.nativeName}`;
         col1Span[1].innerHTML = `<strong>Population: </strong>${country.population}`;
